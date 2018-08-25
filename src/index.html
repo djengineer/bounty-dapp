@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Consenses 2018 - Bounty App</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <section class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="text-center align-middle" style="position:relative;top:10px;">
+            Consensys Developers Course 2018<br>
+            Bounty dApp<hr/></h1>
+          </div>
+      </div><!-- row -->
+    </div><!-- container -->
+    </section>
+    <span id="ContractStatus" class="text-center" style="font-size:2em;"></span>
+  <section class="bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 class="text-center">Flow</h1>
+          <hr/>
+          <div class="circle bg-light col-sm-3"><p>Add Your Profile<br>(optional)</p></div>
+          <div class="circle bg-light col-sm-3"><p>Add a Job</p></div>
+          <div class="circle bg-light col-sm-3"><p>Accept a Job</p></div>
+          <div class="circle bg-light col-sm-3"><p>Complete a Job</p></div>
+          </div>
+      </div><!-- row -->
+    </div><!-- container -->
+    </section>  
+
+  <section class="bg-light">
+    <div class="container">  
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2>Show My Address</h2>
+          <hr>
+          <button id="show-my-address-btn" class="btn btn-dark" style="width:80%"><h3>Show</h3></button><br>
+          <span id="my_address" style="font-size:2em"></span>
+        </div>
+      </div><!--row-->
+      </div><!-- container -->
+    </section> 
+  <section class="bg-white">
+    <div class="container">  
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Show My Balance</h2>
+          <hr>
+          <button id="show-my-balance-btn" class="btn btn-dark"><h3>Show My Balance</h3></button>
+          <span id="my_balance" style="font-size:2em"></span>
+        </div>
+        <div class="col-sm-6">
+          <h2>Show My Promised(locked) Balance</h2>
+          <hr>
+          <label>Show My Promise Balance - Balance locked to ensure ability to pay for jobs.</label>
+          <button id="show-my-promised-balance-btn" class="btn btn-dark"><h3>Show My Promised Balance</h3></button>
+          
+          <span id="my_promised_balance" style="font-size:2em"></span>
+        </div>
+      </div>
+      </div><!-- container -->
+    </section> 
+      
+<section class="bg-light">
+    <div class="container"> 
+      <div id="add_user" class="row" >
+        <div class="col-sm-6 text-left" style="font-size:1.5em;">
+          <h2>Add Your Profile</h2>
+          <form id="add-user-form">
+            <label>First name</label>
+            <input type="text" name="fname" placeholder="Enter First Name here">
+            <br>
+            <label>Last name</label>
+            <input type="text" name="lname" placeholder="Enter Last Name here">
+            <br>
+            <label>Age</label>
+            <input type="text" name="age" placeholder="Enter Age here">
+            <br>
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Enter Email here">
+            
+            <!--<input type="submit" value="submit" class="btn btn-success">-->
+          </form>
+          <button id="add-user-submit">Add User Submit</button>
+          <span id="form_status"></span>
+          <span id="form_status_logs"></span>
+        </div>
+        <div class="col-sm-6 text-left" style="font-size:1.5em;">
+            <h2>Add Job Posting</h2>
+            <form id="add-job-form">
+              <label>Job Title</label>
+              <input type="text" name="job_title" placeholder="Job title"><br>
+              <label>Job Desc</label>
+              <textarea rows="4" cols="50" name="job_desc" placeholder="Job Description here"></textarea><br>
+              <label>Job Price (ETH)</label>
+              <input type="text" name="job_price" placeholder="Job Price"><br>
+              <label style="color:red;">* the amount in ETH will be deposited into the smart contract</label>
+            </form>
+            <button id="add-job-submit">Add Job Submit</button>
+            <span id="add_job_form_status"></span>
+          </div>
+        </div>
+      </div>
+    </div><!-- container -->
+  </section> 
+  <section class="bg-white">
+    <div class="container">
+      <div id="view_all_job" class="row" style="font-size:1.5em;">
+          <div class="col-sm-12">
+            <h2>View all jobs</h2>
+            <div>
+              <table class="table table-striped" id="jobs_view_all">
+                <tr><th>Job Id</th><th>Job Title</th><th>Job Description</th><th>Job Price(ETH)</th><th>Accept or Not</th></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- container -->
+  </section>
+  <section class="bg-light">
+    <div class="container">
+      <div id="completejob" class="row" style="font-size:1.5em;">
+          <div class="col-sm-12">
+            <h2>Complete My Jobs</h2>
+            <div>
+              <table class="table table-striped" id="accepted_jobs_view_all">
+                <tr><th>Job Id</th><th>Job Title</th><th>Job Description</th><th>Job Price(ETH)</th><th>Complete it!</th></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div><!-- container -->
+  </section>
+  <section class="bg-white">
+    <div class="container">
+      <div id="completejob" class="row text-center" style="font-size:1.5em;">
+          <div class="col-s-12">
+            <h2>Withdraw my ETH</h2>
+            <label style='font-size:1em;'>Withdrawal is enabled both in emergency and normal ops. Speedbumps not implemented for thi project.</label>
+            <div>
+              <button id="withdraw-eth-btn" class="btn btn-success"style="font-size:2em;">Withdraw My ETH</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- container -->
+  </section>
+  <section class="bg-light">
+    <div class="container">
+      <div id="completejob" class="row text-center" style="font-size:1.5em;">
+          <div class="col-s-12">
+            <h2>EMERGENCY STOP(by owner)</h2>
+            <label style='font-size:1em;'>If you change to another account, this will fail to go through</label>
+            <div>
+              <button id="e-stop-btn" class="btn btn-danger"style="font-size:2em;">TOGGLE CIRCUIT BREAK</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- container -->
+  </section>      
+<!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div id='modal-content' class="modal-content text-center">
+        <span class="close-modal" onclick="closemodal()">&times;</span>
+        <h2 id="title">Success</h2><hr/>
+        <p style="font-size:2em;" id="message"></p>
+      </div>
+
+    </div>
+
+    <!-- The Spinner Modal -->
+    <div id="spinnermodal" class="spinnermodal">
+
+      <!-- Modal content -->
+      <div id='spinner-modal-content' class="spinner-modal-content text-center">
+        <i class="fa fa-spinner fa-spin" style="font-size:80px"></i>
+
+      </div>
+
+    </div>
+         
+        
+
+
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    -->
+    <!--<script src="js/jquery-1.12.4.min.js"></script>-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      function show_view_all(){
+        var elem = document.getElementById('view_all');
+        if (elem.style.display == "none"){
+          elem.style.display = "block";
+        }else if (elem.style.display == "block"){
+          elem.style.display = "none";
+        }
+      }
+    </script>
+    <script>
+      var modal = document.getElementById('myModal');
+      // Get the <span> element that closes the modal
+      // When the user clicks on <span> (x), close the modal
+      function closemodal() {
+        console.log('clicked');
+          modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      } </script>
+    
+  </body>
+</html>

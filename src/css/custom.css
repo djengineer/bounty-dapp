@@ -1,0 +1,117 @@
+body{
+	font-family: 'Fjalla One', sans-serif;
+}
+section{
+		min-height:300px;
+		
+}
+label{
+	color:grey;
+	font-style: italic;
+	font-size:1.5em;
+}
+.container{
+padding-top:100px;
+padding-bottom:100px;
+}
+.bg-dark{
+	background: linear-gradient(to bottom right, #0f4654, #060c44);
+	color:white;
+
+	display:block;
+}
+.bg-light{
+	background: linear-gradient(to bottom right, #f2f3ff, #f2fffd);
+	color:#363837;
+
+}
+.bg-white{
+	background: white;
+	color:#363837;
+
+}
+.circle {
+  height: 250px;
+  width: 250px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  padding-top:100px;
+  text-align: center;
+  font-size:2em;
+  font-weight: bold;
+}
+
+.btn-dark{
+	background: linear-gradient(to bottom right, #0f4654, #060c44);
+	color:white;
+	border-radius: 10%;
+	display:inline-block;
+	vertical-align: middle;
+}
+.btn-dark:hover{
+color:cyan;
+}
+ /* The Modal (background) */
+.modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+	background: linear-gradient(to bottom right, #fcfcfc, #eaeaea);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 10px solid #888;
+    border-color: green;
+    width: 80%; /* Could be more or less, depending on screen size */
+    min-height:300px;
+}
+
+
+/* The Close Button */
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+} 
+
+/* The Modal (background) */
+.spinnermodal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+/* Modal Content/Box */
+.spinner-modal-content {
+  margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    
+    color:white;
+    width: 80%; /* Could be more or less, depending on screen size */
+    min-height:300px;
+}
