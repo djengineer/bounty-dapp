@@ -478,8 +478,9 @@ App = {
     }).then(function(response){
         App.waitForConfirmation();
         btn.classList.remove('btn-primary');
-        btn.classList.add('btn-success');
+        btn.classList.add('btn-danger');
         btn.innerHTML = "Completed";
+        btn.disabled = true;
     });
   },//complete job
   withdrawEth : function(){

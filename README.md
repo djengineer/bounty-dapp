@@ -87,3 +87,5 @@ Speed Bumps
 The Truffle test with the emergency stop(circuit breaker) function will fail. 
 But it dApp works as intended, the contract also works well with Remix.
 
+If we want to have a successful test run, we can remove isAdmin modifier from the 
+toggleContractActive() function in the contract
