@@ -6,7 +6,10 @@
 This is a dApp for posting, accepting and completing jobs.
 
 ## Dev Notes:
-- I could not access the EthPM website to find the libraries.
+- There will be errors in the test. Please see Test Notes below.
+- Please update metamask to the latest version.
+
+- I could not access the EthPM website. It just could not load up for me.
 - I have tried to use IPFS for user profile photos but I could not access
 the IPFS nodes in the ipfs web, even with the IPFS companion.
 

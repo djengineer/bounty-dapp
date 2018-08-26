@@ -2,6 +2,10 @@
 
 The design pattern follows the Best Practices Guidelines.
 Most notedly is the setting of the Pulling Pattern.
+## Pulling pattern
+Pulling pattern requires the user to withdraw ETH themselves,
+instead of automatically pushing ETH into their accounts.
+ 
 
 Custom design pattern would be the use of the Promised Balances.
 
