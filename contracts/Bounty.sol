@@ -68,7 +68,7 @@ contract Bounty{
 	isAdmin 
 	public
 	returns(bool success){
-	    // You can add an additional modifier that restricts stopping a contract to be based on another action, such as a vote of users
+		// toggle stopped
 	    stopped = !stopped;
 	    return true;
 	}
@@ -79,9 +79,11 @@ contract Bounty{
 	event logAddUser(address accountAddress,uint _age, string _fname, string _lname, string _email);
 	event logAddJob(string job_title, string job_description, uint job_price);
 	event logJobsCount();
+	// check active status of contract 
 	function checkActive() public view returns(bool stoppedstatus){
 		return stopped;
 	}
+	// add user
 	function AddUser(uint _age, string _fname, string _lname, string _email) 
 	  public
 	  stopInEmergency
@@ -109,15 +111,19 @@ contract Bounty{
 		return (true);
 
 	}
+	// for displaying and pagination
 	function getAllUser() view public returns(address[]){
 		return userAccounts;
 	}
+	// for displaying and pagination
 	function getUserData(address accountAddress) view public returns(uint, string, string,string){
 		return (users[accountAddress].age,users[accountAddress].fname,users[accountAddress].lname,users[accountAddress].email);
 	}
+	// check current address
 	function getMyAddress() view public returns(address){
 		return msg.sender;
 	}
+	// Add jobs and pay in
 	function AddJob(string job_title, string job_description) 
 		stopInEmergency
 		payable 
@@ -138,18 +144,22 @@ contract Bounty{
 		mypromisedamount[msg.sender] += msg.value;
 		return true;
 	}
+	// for displaying and pagination
 	function JobsCount() view public returns(uint count){
 		return uint(jobList.length);
 	}
 	function ShowJobList() view public returns(uint[]){
 		return jobList;
 	}
+	// for displaying and pagination
 	function ShowJobs(uint job_id) view public returns(uint,string,string,uint,bool){
 		return (job_id,jobs[job_id].job_title,jobs[job_id].job_description,jobs[job_id].job_price,jobs[job_id].accepted);
 	}
+
 	function MyAcceptedJobsID() view public returns(uint[] job_ids){
 		return myacceptedjoblist[msg.sender];
 	}
+	// for displaying and pagination
 	function ShowMyAcceptedJobs(uint job_id) view public returns(uint,string,string,uint,bool){
 		return (job_id,jobs[job_id].job_title,jobs[job_id].job_description,jobs[job_id].job_price,jobs[job_id].completed);
 	}
@@ -169,6 +179,8 @@ contract Bounty{
 	returns(bool){
 		// only the person who accepted can complete it
 		require(msg.sender == jobs[job_id].accepted_by);
+		// no double entry
+		require(jobs[job_id].completed!=true);
 		// Check if the sender has enough
 		uint amount = jobs[job_id].job_price;
 		address job_poster = jobs[job_id].useraddress;
@@ -201,10 +213,11 @@ contract Bounty{
         msg.sender.transfer(withdraw_amount);
         
     }
+    // checking locked balances
     function GetMyPromisedAmount() public view returns(uint){
     	return mypromisedamount[msg.sender];
     }
-
+    // check current balance
     function GetMyBalance() public view returns(uint){
     	return balances[msg.sender];
     }
