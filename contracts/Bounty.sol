@@ -2,8 +2,6 @@ pragma solidity 0.4.24;
 
 //////////// NOTES //////////////
 /*
-Future Versions should:
-add time limit between accepting and completing job.
 
 Protections in place:
 Solidity Pragma locked
