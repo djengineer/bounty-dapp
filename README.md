@@ -5,6 +5,11 @@
 ### Project Description
 This is a dApp for posting, accepting and completing jobs.
 
+## Dev Notes:
+- I could not access the EthPM website to find the libraries.
+- I have tried to use IPFS for user profile photos but I could not access
+the IPFS nodes in the ipfs web, even with the IPFS companion.
+
 ## Flow:
 1st User can add a job and will have to pay in the amount that is offered for the job.
 I.e. If I post a "Web Building Job Request" for 2.3 ETH, I will have to pay 2.3 ETH
@@ -45,4 +50,37 @@ Run truffle commands:
 URL in the browser would be:
 
 `localhost:3000`
+
+### Use Metamask for transactions
+- On localhost:8545 network in Metamask
+
+# Protections in place
+
+### Solidity Pragma locked
+- Ensure that the contract can be compiled.
+
+### Rentrancy protection
+- Complete all internal calculations and transfers before .transfer()
+
+### Overflow protection
+- Prevents transactions from taking place if uint balances overflows
+
+### Underflow protection
+- Similar to Overflow
+
+### Circuit Breaker
+- Emergency stop by Contract Creator
+
+### Crosssite-Scripting protection
+
+# More things to add for Real dApp:
+Speed Bumps
+
+# Testing
+### Starting the test
+`truffle test`
+
+### Testing notes
+The Truffle test with the emergency stop(circuit breaker) function will fail. 
+But it dApp works as intended, the contract also works well with Remix.
 
