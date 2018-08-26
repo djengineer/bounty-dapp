@@ -1,9 +1,11 @@
-### Design Patterns
+# Design Patterns
 
 The design pattern follows the Best Practices Guidelines.
 Most notedly is the setting of the Pulling Pattern.
 
 Custom design pattern would be the use of the Promised Balances.
+
+## Locking Balances to ensure payment
 
 The promised balances is used to ensure that the job posters have enough balance to pay the account which accepted and completed the job.
 

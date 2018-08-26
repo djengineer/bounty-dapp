@@ -6,13 +6,13 @@
 ### Rentrancy protection
 - Complete all internal calculations and transfers before .transfer()
 
-###Overflow protection
+### Overflow protection
 - Prevents transactions from taking place if uint balances overflows
 
-###Underflow protection
+### Underflow protection
 - Similar to Overflow
 
-###Circuit Breaker
+### Circuit Breaker
 - Emergency stop by Contract Creator
 
 # More things to add for Real dApp:
