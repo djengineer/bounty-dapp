@@ -67,10 +67,10 @@ contract Bounty{
 	function toggleContractActive()
 	isAdmin 
 	public
-	returns(bool success){
+	returns(bool status){
 		// toggle stopped
 	    stopped = !stopped;
-	    return true;
+	    return stopped;
 	}
 
 	modifier stopInEmergency { require(!stopped); _; }
