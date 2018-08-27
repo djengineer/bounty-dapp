@@ -19,3 +19,6 @@ If the account balance is less than or equal to the promised amount, the account
 
 Using the `required()` checks, protection from double entries are enabled.
 Please see the comments in Bounty.sol contract for the details 
+
+## Payment Fencing
+Only the address which accepted the job can be paid from completing jobs 
