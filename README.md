@@ -89,3 +89,6 @@ But it dApp works as intended, the contract also works well with Remix.
 
 If we want to have a successful test run, we can remove isAdmin modifier from the 
 toggleContractActive() function in the contract
+
+### Please feel free to create an issue for questions thanks!
+:D
